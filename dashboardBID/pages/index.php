@@ -51,7 +51,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 
-                <a class="navbar-brand" href="index.php"> Distribución Inteligente de Recursos</a>
+                <a class="navbar-brand" href="index.php"> Distribución Inteligente</a>
             </div>
             <!-- /.navbar-header -->
 

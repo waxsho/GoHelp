@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
-    <title>Directions service</title>
+    <title>Travel modes in directions</title>
     <style>
       html, body {
         height: 100%;
@@ -29,55 +29,63 @@
 
     </style>
   </head>
-<body>
-   
-    <div id="map"></div>
+  <body>
 
+    <div id="map"></div>
     <script>
 function initMap() {
-    var start='chicago, il';
-    var end='los angeles, ca';
-  var directionsService = new google.maps.DirectionsService;
   var directionsDisplay = new google.maps.DirectionsRenderer;
+  var directionsService = new google.maps.DirectionsService;
   var map = new google.maps.Map(document.getElementById('map'), {
-    zoom: 7,
-    center: {lat: 41.85, lng: -87.65}
+    zoom: 14,
+    center: {lat: 37.77, lng: -122.447}
   });
   directionsDisplay.setMap(map);
 
-
-    directionsService.route({
-    origin: document.getElementById('chicago, il').value,
-    destination: document.getElementById('los angeles, ca').value,
-    travelMode: google.maps.TravelMode.DRIVING
-  }, function(response, status) {
-    if (status === google.maps.DirectionsStatus.OK) {
-      directionsDisplay.setDirections(response);
-    } else {
-      window.alert('Directions request failed due to ' + status);
-    }
-  });
+  calculateAndDisplayRoute1(directionsService, directionsDisplay);
+  calculateAndDisplayRoute2(directionsService, directionsDisplay);
 
 }
 
-function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+function calculateAndDisplayRoute1(directionsService, directionsDisplay) {
   directionsService.route({
-    origin: document.getElementById('start').value,
-    destination: document.getElementById('end').value,
+    origin: {lat: -0.145523, lng: -78.490617},  // Haight.
+    destination: {lat: -0.959538, lng: -80.694748},  // Ocean Beach.
+    // Note that Javascript allows us to access the constant
+    // using square brackets and a string value as its
+    // "property."
     travelMode: google.maps.TravelMode.DRIVING
   }, function(response, status) {
-    if (status === google.maps.DirectionsStatus.OK) {
+    if (status == google.maps.DirectionsStatus.OK) {
       directionsDisplay.setDirections(response);
     } else {
       window.alert('Directions request failed due to ' + status);
     }
   });
+    
+    
+
 }
         
-        
+            function calculateAndDisplayRoute2(directionsService, directionsDisplay) {
+  directionsService.route({
+    origin: {lat: -0.218765, lng: -78.513273},  // Haight.
+    destination: {lat: -0.955273, lng: -80.746853},  // Ocean Beach.
+    // Note that Javascript allows us to access the constant
+    // using square brackets and a string value as its
+    // "property."
+    travelMode: google.maps.TravelMode.DRIVING
+  }, function(response, status) {
+    if (status == google.maps.DirectionsStatus.OK) {
+      directionsDisplay.setDirections(response);
+    } else {
+      window.alert('Directions request failed due to ' + status);
+    }
+  });
+   }             
 
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaW0FToUKQXFsBxl4_xF2edMqadXSWZ1c&signed_in=true&callback=initMap"
         async defer></script>
-</body>
+  </body>
 </html>
