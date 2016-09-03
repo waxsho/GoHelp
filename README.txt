@@ -1,2 +1,0 @@
-GoHelp
-Distribución Inteligente
