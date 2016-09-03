@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+    <title>Mapa Centros de Acopio</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+      #map {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+
+function initMap() {
+    
+  var CA1 = {lat: -0.145523, lng: -78.490617};
+  var CA2 = {lat: -0.220348, lng: -78.511785};
+  var CA3 = {lat: -0.183163, lng: -78.486863};
+  var CA4 = {lat: -0.183103, lng: -78.482275};
+  var CA5 = {lat: -0.189193, lng: -78.488038};
+  var CA6 = {lat: -2.195328, lng: -79.880849};
+  var CA7 = {lat: -0.933881, lng: -78.614480};
+  var CA8 = {lat: -1.268148, lng: -78.628224};
+  var CA9 = {lat: -0.177530, lng: -78.477850};
+  var CA10= {lat: -0.216335, lng: -78.503657};
+
+  var map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 8,
+    center: CA1
+  });
+
+    var markerCA1 = new google.maps.Marker({
+    position: CA1,
+    map: map,
+    title: 'Bicentenario'
+    });
+    
+    var markerCA2 = new google.maps.Marker({
+    position: CA2,
+    map: map,
+    title: 'Municipio de Quito'
+    });
+    var markerCA3 = new google.maps.Marker({
+    position: CA3,
+    map: map,
+    title: 'Parque Carolina'
+    });
+    var markerCA4 = new google.maps.Marker({
+    position: CA4,
+    map: map,
+    title: 'Tribuna de los Shyris'
+    });
+    var markerCA5 = new google.maps.Marker({
+    position: CA5,
+    map: map,
+    title: 'Unicef'
+    });
+    var markerCA6 = new google.maps.Marker({
+    position: CA6,
+    map: map,
+    title: 'Municipio de Guayaquil'
+    });
+    var markerCA7 = new google.maps.Marker({
+    position: CA7,
+    map: map,
+    title: 'Municipio de Latacunga'
+    });
+    var markerCA8 = new google.maps.Marker({
+    position: CA8,
+    map: map,
+    title: 'Municipio de Ambato'
+    });
+    var markerCA9 = new google.maps.Marker({
+    position: CA9,
+    map: map,
+    title: 'Estadio Atahualpa'
+    });
+    var markerCA10 = new google.maps.Marker({
+    position: CA10,
+    map: map,
+    title: 'Cruz Roja Ecuatoriana'
+    });
+}
+
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDaW0FToUKQXFsBxl4_xF2edMqadXSWZ1c&signed_in=true&callback=initMap"></script>
+  </body>
+</html>
